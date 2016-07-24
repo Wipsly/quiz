@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quiz</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://bootswatch.com/lumen/bootstrap.min.css">
+  <!-- SCRIPT -->
+  <script src="https://npmcdn.com/vue@latest/dist/vue.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-strap/1.0.11/vue-strap.js"></script>
+</head>
+<body>
+<div class="container">
+  <div id="app">
+      <button class="btn btn-default" @click="showModal = true">Show modal
+      </button>
+      <modal :show.sync="showModal">
+          <div slot="modal-header" class="modal-header">
+              <h4 class="modal-title">Modal title</h4>
+          </div>
+          <div slot="modal-body" class="modal-body">TEST</div>
+      </modal>
+  </div>
+
+  <script>
+    new Vue({
+        components: {
+            modal: VueStrap.modal
+        },
+      el: '#app',
+      data: {
+        showModal: false
+      }
+    })
+  </script>
+</body>
+</html>
